@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Magic Mallys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="src/css/index.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <img src="src/media/imgs/mylog1.png" width="100" height="100" alt="Logo" />
+    <div class="logo">Magic Mallys</div>
+    <button class="menu-toggle" id="menuToggle">&#9776;</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#">Services</a>
+      <a href="#">Products</a>
+      <a href="#">Hire Me</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header><br><br>
+
+  </header>
+
+  <section id="hero">
+    <div class="hero-text">
+      <h1>IF YOU ARE NOT ONLINE, YOU ARE INVISIBLE</h1>
+      <p><strong>Magic Mallys</strong> by <b>Moustapha Sylla</b><br>
+        Custom websites, mobile apps, data systems, e-commerce platforms.
+      </p>
+      <div class="hero-buttons">
+        <button class="start-btn">Start a Project</button>
+        <button class="shop-btn">Shop Products</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="src/media/imgs/IMG-20250715-WA0004_1.png" alt="Mockup">
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>SEO-optimized websites for all business types.</p>
+        <a href="#contact" class="cta green">Get Started</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🖥️</div>
+        <h3>Desktop Tools</h3>
+        <p>Python, SQL & automation for analysts.</p>
+        <a href="#contact" class="cta blue">Get Started</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <h3>Digital Sales Platform</h3>
+        <p>Automated delivery, dashboard analytics.</p>
+        <a href="#contact" class="cta purple">Get Started</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>Import/Export Software</h3>
+        <p>Logistics, HS codes, customs & tracking.</p>
+        <a href="#contact" class="cta orange">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section id="services">
+    <h2>Our Products</h2>
+    <div class="service-cards">
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>SEO-optimized websites for all business types.</p>
+        <a href="#contact" class="cta green">Get Started</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🖥️</div>
+        <h3>Desktop Tools</h3>
+        <p>Python, SQL & automation for analysts.</p>
+        <a href="#contact" class="cta blue">Get Started</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <h3>Digital Sales Platform</h3>
+        <p>Automated delivery, dashboard analytics.</p>
+        <a href="#contact" class="cta purple">Get Started</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>Import/Export Software</h3>
+        <p>Logistics, HS codes, customs & tracking.</p>
+        <a href="#contact" class="cta orange">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="contact">
+    <div class="contact-wrapper">
+      <div class="contact-form">
+        <h2 data-en="Contact Us" data-fr="Contactez-nous">Contact Us</h2>
+        <p data-en="Start your project with Magic Mallys" data-fr="Démarrez votre projet avec Magic Mallys">
+          Start your project with Magic Mallys
+        </p>
+        <form onsubmit="submitForm(event)">
+          <label>Full Name <input type="text" name="full_name" required></label>
+          <label>Email <input type="email" name="email" required></label>
+          <label>Message <textarea name="message" rows="4" required></textarea></label>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <h3 data-en="Contact Information" data-fr="Informations de contact">Contact Information</h3>
+        <p><i class="fas fa-envelope"></i> contact@magicmallys.com</p>
+        <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+        <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2024 Magic Mallys. All rights reserved.
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    const userLang = navigator.language || navigator.userLanguage;
+    const isFrench = userLang.startsWith('fr');
+
+    const greeting = isFrench
+      ? (new Date().getHours() < 12 ? "Bonjour!" : new Date().getHours() < 18 ? "Bon après-midi!" : "Bonsoir!")
+      : (new Date().getHours() < 12 ? "Good morning!" : new Date().getHours() < 18 ? "Good afternoon!" : "Good evening!");
+
+    const thankYouMsg = isFrench
+      ? "Merci pour votre message ! Nous vous contacterons bientôt."
+      : "Thank you for your message! We will contact you soon.";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = isFrench ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+      });
+      alert(greeting);
+    });
+
+    function submitForm(event) {
+      event.preventDefault();
+      const f = event.target;
+      console.log("Submitted:", {
+        name: f.full_name.value,
+        email: f.email.value,
+        message: f.message.value
+      });
+      alert(greeting + " " + thankYouMsg);
+      f.reset();
+    }
+  </script>
+</body>
+</html>
