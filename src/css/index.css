@@ -21,6 +21,7 @@
       color: #111;
     }
 
+
     a {
       text-decoration: none;
       color: white;
@@ -114,14 +115,9 @@
       margin-bottom: 1rem;
     }
 
-    .hero-text p {
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-
     .hero-text strong {
       color: red;
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
 
     .hero-buttons button {
@@ -199,11 +195,15 @@
       background-color: var(--bg-light);
     }
 
+    #contact b {
+      text-align: center;
+    }
     .contact-wrapper {
       display: flex;
       flex-direction: column;
       gap: 2rem;
     }
+
 
     .contact-form, .contact-info {
       background: white;
@@ -212,6 +212,11 @@
       box-shadow: var(--shadow);
     }
 
+    .contact-form p {
+      text-align: center;
+      font-family: 'Times-New-Roman';
+      font-size: 30px;
+    }
     form label {
       display: flex;
       flex-direction: column;
@@ -285,3 +290,4 @@
 
       .logo { margin-left: 1%; font-size: 2rem; }
     }
+
