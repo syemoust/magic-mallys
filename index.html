@@ -156,23 +156,27 @@ Founder & Lead at Magic Mallys
       navLinks.classList.toggle('active');
     });
 
-    const userLang = navigator.language || navigator.userLanguage;
+
+
+    const userLang = navigator.language || navigator.userLanguage; 
+     // e.g., "en-US", "fr-FR", "es", etc.
+
+    if (userLang.startsWith('fr')) {
+        window.location.href = '/fr'; // Redirect to French version
+    } else if (userLang.startsWith('es')) {
+      window.location.href = '/es'; // Redirect to Spanish version
+    } else if (userLang.startsWith('de')) {
+      window.location.href = '/de'; // Redirect to Spanish version
+    } else {
+      window.location.href = '/en'; // Default to English
+    }
+
+    
     const isFrench = userLang.startsWith('fr');
+    const isGermai = userLang.startsWith('de');
+    const isEnglis = userLang.startsWith('en');
+    const isEspagn = userLang.startsWith('es');
 
-    const greeting = isFrench
-      ? (new Date().getHours() < 12 ? "Bonjour!" : new Date().getHours() < 18 ? "Bon après-midi!" : "Bonsoir!")
-      : (new Date().getHours() < 12 ? "Good morning!" : new Date().getHours() < 18 ? "Good afternoon!" : "Good evening!");
-
-    const thankYouMsg = isFrench
-      ? "Merci pour votre message ! Nous vous contacterons bientôt."
-      : "Thank you for your message! We will contact you soon.";
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = isFrench ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-      });
-      alert(greeting);
-    });
 
     function submitForm(event) {
       event.preventDefault();
