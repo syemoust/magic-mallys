@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log(currentPath)
   const langMap = {
-    fr: '/fr/fr_index.html',
+    fr: '/fr/',
     es: '/es/',
-    de: '/de/fr_index.html',
+    de: '/de/',
     en: '/en/',
   };
 
