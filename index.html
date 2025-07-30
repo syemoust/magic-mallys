@@ -4,9 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Magic Mallys</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="src/mjs/index.js"></script>
   <link rel="stylesheet" type="text/css" href="src/css/index.css">
 </head>
 
@@ -148,89 +151,6 @@ Founder & Lead at Magic Mallys
     &copy; 2024 (c) Magic Mallys. All rights reserved.<br>
     Founder: Mr. Moustapha Sylla
   </footer>
-
-  
-
-
-  <script>
-  // ------------------------------
-  // Toggle Navigation Menu
-  // ------------------------------
-  const toggleBtn = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  toggleBtn?.addEventListener('click', () => {
-    navLinks?.classList.toggle('active');
-  });
-
-  // ------------------------------
-  // Language Detection & Redirection
-  // ------------------------------
-  const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
-  const currentPath = window.location.pathname;
-
-  // Language Mapping
-  const langMap = {
-    fr: '/fr/',
-    es: '/es/',
-    de: '/de/',
-    en: '/en/'  // fallback
-  };
-
-  // Detect & Redirect Only If Needed
-  const langPrefix = userLang.split('-')[0];
-  const redirectPath = langMap[langPrefix] || langMap.en;
-
-  // Avoid Infinite Loop (redirect only if not already there)
-  if (!currentPath.startsWith(redirectPath)) {
-    window.location.replace(redirectPath);
-  }
-
-  // ------------------------------
-  // Language Flags (Optional)
-  // ------------------------------
-  const isFrench = langPrefix === 'fr';
-  const isGerman = langPrefix === 'de';
-  const isEnglish = langPrefix === 'en';
-  const isSpanish = langPrefix === 'es';
-
-  // ------------------------------
-  // Form Submission Handling
-  // ------------------------------
-  const form = document.getElementById('contactForm'); // Make sure your form has this ID
-
-  if (form) {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      const f = event.target;
-
-      // Messages based on language
-      let greeting = 'Hello';
-      let thankYouMsg = 'Thank you for your message!';
-
-      if (isFrench) {
-        greeting = 'Bonjour';
-        thankYouMsg = 'Merci pour votre message !';
-      } else if (isGerman) {
-        greeting = 'Hallo';
-        thankYouMsg = 'Danke für Ihre Nachricht!';
-      } else if (isSpanish) {
-        greeting = 'Hola';
-        thankYouMsg = '¡Gracias por tu mensaje!';
-      }
-
-      console.log("Submitted:", {
-        name: f.full_name.value,
-        email: f.email.value,
-        message: f.message.value
-      });
-
-      alert(`${greeting}, ${thankYouMsg}`);
-      f.reset();
-    });
-  }
-</script>
-
 
 
 </body>
