@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de" ng-app="portfolioApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magic Mallys – Digitalisierung & Auto-Import/Export</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fafb;
+      color: #1e293b;
+    }
+
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      color: #0f172a;
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    .team-member {
+      margin-bottom: 1rem;
+    }
+
+    .partners span {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #0f172a;
+      margin: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    angular.module('portfolioApp', [])
+      .controller('MainController', function () {
+        var vm = this;
+
+        vm.intro = `Ich bin Moustapha Sylla, Gründer von Magic Mallys. Gemeinsam mit meinem Team unterstütze ich Unternehmen im digitalen Wandel – mit Fokus auf Webentwicklung, Automatisierung, Handelssysteme und internationale Geschäftsmodelle.
+
+Unsere besondere Stärke: Wir kombinieren Technologie, Branchenwissen und ein starkes Netzwerk in der Automobil- und Logistikbranche. Wir arbeiten eng mit Werkstätten, Teilehändlern, Speditionen und Großhändlern in ganz Europa und Afrika.`;
+
+        vm.skills = [
+          'Webentwicklung & digitale Produktentwicklung',
+          'Import/Export-Management (Fahrzeuge & Autoteile)',
+          'Logistiklösungen & Automatisierung',
+          'API-Schnittstellen & Systemintegration',
+          'Plattformaufbau (Shop, Lager, Kundenportal)',
+          'Prozessoptimierung mit Datenanalyse',
+          'Internationale Zusammenarbeit (Europa – Westafrika)'
+        ];
+
+        vm.services = `Unsere Dienstleistungen umfassen digitale Tools, Beratungsleistungen und Handelslösungen – speziell für Kunden, die im Bereich Auto-Import, Export und Teilehandel aktiv sind. 
+
+Wir bieten digitale Plattformen, automatisierte Prozesse und eine persönliche Betreuung – auch beim Aufbau von Handelskanälen im Ausland.`;
+
+        vm.products = [
+          'Webshops für Auto- & Teilehandel (B2B / B2C)',
+          'Fahrzeug-Importplattform mit Datenabgleich & Logistik',
+          'Digitales Dashboard für Versand & Zollabwicklung',
+          'Online-Bewertungstools für Ankäufer',
+          'Custom-Tools für Lagerbestände & Preise'
+        ];
+
+        vm.team = [
+          { name: 'Moustapha Sylla', role: 'Gründer & Lead Developer' },
+          { name: 'Kouadio Robert Koffi', role: 'Import/Export & Zollmanagement' },
+          { name: 'Seydou Camara', role: 'Logistik & Partnernetzwerke' },
+          { name: 'Anna Bergmann', role: 'Webdesign & UX' }
+        ];
+
+        vm.partners = [
+          'Autohaus Müller (DE)',
+          'Afrilog Trans (SN)',
+          'EUParts24',
+          'Logixcargo',
+          'mobile.de / eBay API-Partner'
+        ];
+      });
+  </script>
+</head>
+<body ng-controller="MainController as vm">
+  <header>
+    <h1>Magic Mallys</h1>
+    <p>Digitale Lösungen, Handel & internationale Logistik</p>
+  </header>
+
+  <section class="intro">
+    <h2>Über uns</h2>
+    <p>{{ vm.intro }}</p>
+  </section>
+
+  <section class="skills">
+    <h2>Kompetenzen</h2>
+    <ul>
+      <li ng-repeat="skill in vm.skills">{{ skill }}</li>
+    </ul>
+  </section>
+
+  <section class="services">
+    <h2>Dienstleistungen</h2>
+    <p>{{ vm.services }}</p>
+  </section>
+
+  <section class="products">
+    <h2>Digitale Produkte & Lösungen</h2>
+    <ul>
+      <li ng-repeat="product in vm.products">{{ product }}</li>
+    </ul>
+  </section>
+
+  <section class="team">
+    <h2>Unser Team</h2>
+    <div ng-repeat="member in vm.team" class="team-member">
+      <strong>{{ member.name }}</strong> – {{ member.role }}
+    </div>
+  </section>
+
+  <section class="partners">
+    <h2>Partner & Kooperationen</h2>
+    <p>
+      <span ng-repeat="partner in vm.partners">{{ partner }}</span>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Magic Mallys – Moustapha Sylla & Team</p>
+  </footer>
+</body>
+</html>

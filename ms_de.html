@@ -17,6 +17,80 @@
           margin-left: -10%;
        }
     }
+
+    .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar img {
+  height: 60px;
+}
+
+#msteam { color: red; text-decoration: underline; }
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  border: solid 0.6px;
+  border-color: red;
+
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #111;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
   </style>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="static/src/mjs/test.js"></script>
@@ -32,20 +106,20 @@
     <nav class="nav-links" id="navLinks">
       <a href="#services">Dienstleistungen</a>
       <a href="#services1">Produkte</a>
-      <a href="#">Über uns</a>
+      <a href="templates/de/uberuns.html">Über uns</a>
       <a href="#contact">Kontakt</a>
     </nav>
   </header><br><br>
 
   <section id="hero">
     <div class="hero-text">
-      <h1>WENN DU NICHT ONLINE BIST, BIST DU UNSICHTBAR</h1>
+      <h1>Wenn Sie online nicht sichtbar sind, verpassen Sie Ihre Chancen.</h1>
 
-      <b class="mJob">Individuelle Websites, mobile Apps, Datensysteme, E-Commerce-Plattformen und mehr.</b>
+      <b class="mJob">Websites, Apps, Datenautomatisierung & digitale Verkaufsplattformen</b>
       <br>
-      Intelligente digitale Lösungen — Entwickelt für Wachstum: Web, Mobile und Systeme, die zu deinem Unternehmen passen.
+      Willkommen bei Magic Mallys – Ihrem Partner für individuelle digitale Lösungen. Wir entwickeln intelligente Systeme, die Ihr Unternehmen online sichtbar, effizient und zukunftssicher machen.
 
-      <p>Hallo, ich bin Moustapha Sylla, Gründer von <strong>Magic Mallys</strong>, einem digitalen Entwicklungsstudio, das Unternehmen mit maßgeschneiderten Webseiten, Anwendungen und Automatisierungstools beim Wachstum unterstützt.</p>
+      <p>Mein Name ist Moustapha Sylla, Gründer von Magic Mallys. Gemeinsam mit meinem Team verwandle ich digitale Herausforderungen in smarte Lösungen – von Webseiten über Apps bis zu automatisierten Datenprozessen. .</p>
 
       <br>
       <div class="hero-buttons">
@@ -55,6 +129,7 @@
     </div>
     <div class="hero-image">
       <img src="static/src/media/imgs/IMG-20250715-WA0004_1.png" alt="Mockup">
+      <!-- <img src="background1.png" alt="Mockup"> -->
     </div>
   </section>
 
@@ -76,13 +151,13 @@
       <div class="card">
         <div class="card-icon">🛒</div>
         <h3>Verkaufsplattform</h3>
-        <p>Automatisierte Lieferung, analytische Dashboards.</p><br>
+        <p>Automatisierte Lieferung, analytische Dashboards.</p><br><br>
         <a href="#contact" class="cta purple">Starten</a>
       </div>
       <div class="card">
         <div class="card-icon">🌍</div>
         <h3>Dashboards mit Plotly</h3>
-        <p>Interaktive Dashboards mit Pandas und Plotly Dash.</p>
+        <p>Interaktive Dashboards mit Pandas und Plotly Dash.</p><br>
         <a href="#contact" class="cta orange">Starten</a>
       </div>
     </div>
@@ -94,13 +169,13 @@
       <div class="card">
         <div class="card-icon">🌐</div>
         <h3>Digitale Gadgets</h3>
-        <p>Intelligente Gadgets für sichereres und angenehmeres Fahren – Kameras, Ladegeräte, Werkzeuge.</p><br>
+        <p>Intelligente Gadgets für sichereres und angenehmeres Fahren – Kameras, Ladegeräte, Werkzeuge.</p>
         <a href="#contact" class="cta green">Starten</a>
       </div>
       <div class="card">
         <div class="card-icon">🖥️</div>
         <h3>Smart-Geräte</h3>
-        <p>Verbessere dein Leben mit intelligenten Assistenten, Automatisierung und Sicherheitstechnologie.</p>
+        <p>Verbessere dein Leben mit intelligenten Assistenten, Automatisierung und Sicherheitstechnologie.</p><br>
         <a href="#contact" class="cta blue">Starten</a>
       </div>
       <div class="card">
@@ -112,7 +187,7 @@
       <div class="card">
         <div class="card-icon">🌍</div>
         <h3>Import-/Exportsoftware</h3>
-        <p>Logistik, Zollcodes, Produktverfolgung.</p>
+        <p>Logistik, Zollcodes, Produktverfolgung.</p><br><br>
         <a href="#contact" class="cta orange">Starten</a>
       </div>
     </div>
@@ -141,7 +216,6 @@
 
   <footer>
     &copy; 2024 (c) Magic Mallys. Alle Rechte vorbehalten.<br>
-    Gründer: Moustapha Sylla & Teams
   </footer>
 
 
@@ -153,6 +227,7 @@
     const contactSection = document.getElementById('contact');
     const contactSection1 = document.getElementById('services');
     const contactSection2 = document.getElementById('services1');
+    const contactSection3 = document.getElementById('msteam');
 
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -163,6 +238,9 @@
     if(contactSection2) {
       contactSection2.scrollIntoView({ behavior: 'smooth' });
     }
+    if(contactSection3) {
+      contactSection3.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   // Button: "Projekt starten"
@@ -171,7 +249,7 @@
   // Button: "Shop"
   document.querySelector('.shop-btn').addEventListener('click', () => {
     // Replace with your actual shop URL
-    window.location.href = '/shop.html';
+    window.location.href = 'index.html';
   });
 
   // All CTA "Starten" buttons in cards
@@ -197,7 +275,6 @@
 
   window.submitForm = submitForm; // Make accessible from HTML
 </script>
-
 
 </body>
 </html>

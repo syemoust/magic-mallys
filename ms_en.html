@@ -7,22 +7,103 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+     <style>
+    #de_logo {
+      margin-left: -27%;
+    }
+    @media (max-width: 768px) {
+       #de_logo {
+          margin-left: -10%;
+       }
+    }
 
+    .navbar {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       background: #111;
+       color: white;
+       padding: 10px 20px;
+       position: sticky;
+       top: 0;
+       z-index: 1000;
+     }
+
+.navbar img {
+  height: 60px;
+}
+#msteam { color: red; text-decoration: underline; }
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  border: solid 0.6px;
+  border-color: red;
+
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #111;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+  </style>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   
-  <link rel="stylesheet" type="text/css" href="../../static/src/css/index.css">
+  <link rel="stylesheet" type="text/css" href="static/src/css/index.css">
 </head>
 
 <body>
 
   <header class="navbar">
-    <img src="../../static/src/media/imgs/mylog1.png" width="100" height="100" alt="Logo" />
+    <img src="static/src/media/imgs/mylog1.png" width="100" height="100" alt="Logo" />
     <div class="logo">Magic Mallys</div>
     <button class="menu-toggle" id="menuToggle">&#9776;</button>
     <nav class="nav-links" id="navLinks">
-      <a href="#">Services</a>
-      <a href="#">Products</a>
-      <a href="#">About</a>
+      <a href="#services">Services</a>
+      <a href="#services1">Products</a>
+      <a href="#msteam">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header><br><br>
@@ -44,7 +125,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="../../static/src/media/imgs/IMG-20250715-WA0004_1.png" alt="Mockup">
+      <img src="static/src/media/imgs/IMG-20250715-WA0004_1.png" alt="Mockup">
     </div>
   </section>
 
@@ -60,31 +141,31 @@
       <div class="card">
         <div class="card-icon">🖥️</div>
         <h3>Office Tools</h3>
-        <p>Python, SQL, automation, scraping and optimization for analysts.</p>
+        <p>Python, SQL, automation, scraping and optimization for analysts.</p><br>
         <a href="#contact" class="cta blue">Start</a>
       </div>
       <div class="card">
         <div class="card-icon">🛒</div>
         <h3>Sales Platform</h3>
-        <p>Automated delivery, analytical dashboards.</p><br>
+        <p>Automated delivery, analytical dashboards.</p><br><br>
         <a href="#contact" class="cta purple">Start</a>
       </div>
       <div class="card">
         <div class="card-icon">🌍</div>
         <h3>Dashboard with Plotly</h3>
-        <p>Interactive dashboards with Pandas and Plotly Dash.</p>
+        <p>Interactive dashboards with Pandas and Plotly Dash.</p><br><br>
         <a href="#contact" class="cta orange">Start</a>
       </div>
     </div>
   </section>
 
-  <section id="services">
+  <section id="services1">
     <h2>Our Products</h2>
     <div class="service-cards">
       <div class="card">
         <div class="card-icon">🌐</div>
         <h3>Digital Gadgets</h3>
-        <p>Smart gadgets for safer and more enjoyable driving — cameras, chargers, tools.</p><br>
+        <p>Smart gadgets for safer and more enjoyable driving — cameras, chargers, tools.</p>
         <a href="#contact" class="cta green">Start</a>
       </div>
       <div class="card">
@@ -102,7 +183,7 @@
       <div class="card">
         <div class="card-icon">🌍</div>
         <h3>Import/Export Software</h3>
-        <p>Logistics, customs codes, product tracking.</p>
+        <p>Logistics, customs codes, product tracking.</p><br>
         <a href="#contact" class="cta orange">Start</a>
       </div>
     </div>
@@ -131,8 +212,60 @@
 
   <footer>
     &copy; 2024 (c) Magic Mallys. All rights reserved.<br>
-    Founder: Moustapha Sylla & Teams
+    Founder: <a id="msteam" href="">Moustapha Sylla & Teams</a>
   </footer>
+  
 
+<script>
+  // Scroll to contact form
+  function scrollToContact() {
+
+    const contactSection = document.getElementById('contact');
+    const contactSection1 = document.getElementById('services');
+    const contactSection2 = document.getElementById('services1');
+
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    if(contactSection1) {
+      contactSection1.scrollIntoView({ behavior: 'smooth' });
+    }
+    if(contactSection2) {
+      contactSection2.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // Button: "Projekt starten"
+  document.querySelector('.start-btn').addEventListener('click', scrollToContact);
+
+  // Button: "Shop"
+  document.querySelector('.shop-btn').addEventListener('click', () => {
+    // Replace with your actual shop URL
+    window.location.href = 'index.html';
+  });
+
+  // All CTA "Starten" buttons in cards
+  document.querySelectorAll('.cta').forEach(button => {
+    button.addEventListener('click', scrollToContact);
+  });
+
+  // Form submission handler (optional logic)
+  function submitForm(event) {
+    event.preventDefault();
+
+    const name = event.target.full_name.value;
+    const email = event.target.email.value;
+    const message = event.target.message.value;
+
+    // You can send this data via fetch() or similar here
+    console.log("Form submitted:", { name, email, message });
+
+    alert('Danke! Wir haben deine Nachricht erhalten.');
+
+    event.target.reset();
+  }
+
+  window.submitForm = submitForm; // Make accessible from HTML
+</script>
 </body>
 </html>
