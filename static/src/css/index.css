@@ -138,10 +138,12 @@
 
     .hero-image img {
       width: 350px;
-      height: 400px;
+      height: 450px;
       object-fit: cover;
     }
-
+    .whspp, .tiktok, .fcbook, .insta {
+      color: blue; font-size: 10px; padding-left: 5px;
+    }
     section {
       padding: 4rem 2rem;
       max-width: 1200px;
