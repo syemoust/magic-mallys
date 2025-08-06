@@ -1,14 +1,24 @@
-const userLang = navigator.language || navigator.userLanguage;
+    $(document).ready(function () {
 
-     
-    if (navigator.language.startsWith("fr")) {
-       window.location.href = "ms_fr.html";
+      const language = navigator.language || navigator.userLanguage; // e.g., "en-US"
+      const userAgent = navigator.userAgent; // Full user agent string
 
-    } else if(navigator.language.startsWith("de")) {
-        window.location.href = "ms_de.html";
+      // Simple browser detection (not 100% reliable)
+      let browser = "Unknown";
 
-    } else {
-        window.location.href = "ms_en.html";
+      if (userAgent.includes("Chrome") && !userAgent.includes("Edg") && !userAgent.includes("OPR")) {
+          
+          alert("Chrome ");
 
-    }
+      }else if ( userAgent.includes("Firefox")) {
+          if ( language.startsWith("de")){
+            $('#de_logo').css({
+                               "fontSize": "55px", 
+                               "marginLeft": "-18%"
+            });
+          }
+      }else {
+        alert("Else not ok ");
+      }
 
+    });
