@@ -14,9 +14,8 @@
   <link rel="stylesheet" type="text/css" href="static/src/css/index.css">
 
   <style>
-    #de_logo {
-      margin-left: -27%;
-    }
+    
+
     @media (max-width: 768px) {
        #de_logo {
           margin-left: -10%;
@@ -59,12 +58,6 @@
   transition: background 0.3s;
 }
 
-.nav-links a:hover {
-  border: solid 0.6px;
-  border-color: red;
-
-}
-
 
 .menu-toggle {
   display: none;
@@ -100,17 +93,40 @@
 
 </head>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar");
+
+    function handleScroll() {
+      if (window.innerWidth >= 410) {
+        if (window.scrollY > 10) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    handleScroll(); // Run on page load
+  });
+</script>
+
 <body>
 
   <header class="navbar">
-    <img src="static/src/media/imgs/mylog1.png" width="100" height="100" alt="Logo" />
+    <!-- <img src="static/src/media/imgs/mylog1.png" width="100" height="100" alt="Logo" /> -->
     <div id="de_logo" class="logo">Magic Mallys</div>
     <button class="menu-toggle" id="menuToggle">&#9776;</button>
     <nav class="nav-links" id="navLinks">
-      <a href="#services">Dienstleistungen</a>
-      <a href="#services1">Produkte</a>
-      <a href="templates/de/uberuns.html">Über uns</a>
-      <a href="#contact">Kontakt</a>
+      <a class="a" href="#services">Dienstleistungen</a>
+      <a class="a1" href="#services1">Produkte</a>
+      <a class="a2" href="templates/de/uberuns.html">Über uns</a>
+      <a class="a3" href="#contact">Kontakt</a>
     </nav>
   </header><br><br>
 
@@ -131,7 +147,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="static/src/media/imgs/20230927_094551.jpg" alt="Mockup">
+      <img src="static/src/media/imgs/logos/IMG-20250806-WA0004.jpg" alt="Mockup">
       <!-- <img src="background1.png" alt="Mockup"> -->
     </div>
   </section>
@@ -219,7 +235,7 @@
           <a class="insta" href="https://instagram.com/magic_mallys" target="_blank"><i class="fab fa-instagram fa-2x" style="color: #E4405F;"></i></a>&emsp;
           <i class="fas fa-map-marker-alt"></i> &emsp;&emsp; DE - Germany - Bordumstraße 1, 26382 Wilhelmshaven
 
-      </p>
+        </p>
       </div>
     </div>
   </section>

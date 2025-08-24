@@ -11,21 +11,25 @@
             if ( language.startsWith("de")) {
                alert("Herztlich Wilkommen bei Magic - Mallys ");
                window.location.href = "ms_de.html"
+
             }else if ( language.startsWith("fr")) {
                alert("Bienvenue chez Magic - Mallys ");
-               window.location.href = "ms_fr.html"
+               window.location.href = "ms_fr.html";
+
             }else {
                 alert("You are Welcome to Magic - Mallys ");
-               window.location.href = "ms_en.html"
+                window.location.href = "ms_en.html"
             }
             
       } else if (userAgent.includes("Firefox")) {
            if ( language.startsWith("de")) {
                alert("Herztlich Wilkommen bei Magic - Mallys ");
-               window.location.href = "ms_de.html"
+               window.location.href = "ms_de.html";
+
             }else if ( language.startsWith("fr")) {
                alert("Bienvenue chez Magic - Mallys ");
-               window.location.href = "ms_fr.html"
+               window.location.href = "ms_fr.html";
+
             }else {
                 alert("You are Welcome to Magic - Mallys ");
                window.location.href = "ms_en.html"
@@ -34,23 +38,30 @@
             if ( language.startsWith("de")) {
                alert("Herztlich Wilkommen bei Magic - Mallys ");
                window.location.href = "ms_de.html"
+
             }else if ( language.startsWith("fr")) {
                alert("Bienvenue chez Magic - Mallys ");
                window.location.href = "ms_fr.html"
+
             }else {
                 alert("You are Welcome to Magic - Mallys ");
                window.location.href = "ms_en.html"
+
             }
       } else if (userAgent.includes("Edg")) {
             if ( language.startsWith("de")) {
                alert("Herztlich Wilkommen bei Magic - Mallys ");
                window.location.href = "ms_de.html"
+
             }else if ( language.startsWith("fr")) {
                alert("Bienvenue chez Magic - Mallys ");
                window.location.href = "ms_fr.html"
+
             }else {
+
                 alert("You are Welcome to Magic - Mallys ");
                window.location.href = "ms_en.html"
+               
             }
       } else if (userAgent.includes("OPR") || userAgent.includes("Opera")) {
             
