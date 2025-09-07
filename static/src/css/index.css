@@ -15,11 +15,61 @@
 
 
 
-/*   Mobile Phone style  */
-@media only screen and (max-width: 420px) and (max-height: 920px) {
+/*   Mobile Phone style  Portrait */
+@media only screen and (max-width: 420px) and (max-height: 920px) {}
+
+
+
+/* 📱 Mobile view: portrait & landscape */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    margin-top: 4.5%;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #333;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+    border-radius: 0 0 0 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #444;
+  }
+}
+
+/* Landscape phones: slightly wider navbar links */
+@media (max-height: 500px) and (orientation: landscape) {
+  .nav-links {
+    top: 50px;
+    width: 180px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
 
 
   /* Base header styling */
+  /*
 .navbar {
   position: fixed;
   top: 0;
@@ -42,9 +92,9 @@
 .navbar.shrink {
   padding: 8px 10px;
   font-size: 16px;
-  background-color: rgba(0,0,0,0.8); /* optional darker bg on scroll */
+  background-color: rgba(0,0,0,0.8); 
 }
-
+*/
 /* Optional: make sure body content doesn't hide behind navbar */
 body {
   padding-top: 120px; /* Adjust depending on your header height */
@@ -214,7 +264,7 @@ body {
       height: 450px;
       object-fit: cover;
     }
-    .whspp, .tiktok, .fcbook, .insta {
+    .whspp, .tiktok, .fcbook, .insta, .teleg {
       color: blue; font-size: 10px; padding-left: 5px;
     }
     section {
@@ -286,12 +336,23 @@ body {
       padding: 2rem;
       border-radius: 12px;
       box-shadow: var(--shadow);
+      color: #ffffff; /* White */
     }
 
     .contact-form p {
       text-align: center;
       font-family: 'Times-New-Roman';
       font-size: 30px;
+    }
+    .contact-form  {
+      font-family: 'Times-New-Roman';
+      font-size: 25px;
+      color: darkgreen;
+    }
+    .k_info {
+      font-family: 'Times-New-Roman';
+      font-size: 25px;
+      color: darkgreen;
     }
     form label {
       display: flex;

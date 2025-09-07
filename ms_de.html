@@ -120,7 +120,7 @@
 
   <header class="navbar">
     <!-- <img src="static/src/media/imgs/mylog1.png" width="100" height="100" alt="Logo" /> -->
-    <div id="de_logo" class="logo">Magic Mallys</div>
+    <div id="de_logo" class="logo">Magic-Mallys</div>
     <button class="menu-toggle" id="menuToggle">&#9776;</button>
     <nav class="nav-links" id="navLinks">
       <a class="a" href="#services">Dienstleistungen</a>
@@ -226,14 +226,17 @@
       </div>
       <div class="contact-info">
 
-        <h3>Kontaktinformationen</h3><br>
+        <h3 class="k_info">Kontaktinformationen</h3><br>
         <p>
 
-          <a class="whspp" href="https://wa.me/004915215046143" target="_blank"><i class="fab fa-whatsapp fa-2x" style="color: #25D366;"></i></a>&emsp;
+          <a class="whspp" href="https://wa.me/4915215046143" target="_blank"><i class="fab fa-whatsapp fa-2x" style="color: #25D366;"></i></a>&emsp;
           <a class="tiktok" href="https://www.tiktok.com/@magic_mallys" target="_blank"><i class="fab fa-tiktok fa-2x" style="color: #000;"></i></a>&emsp;
           <a class="fcbook" href="https://facebook.com/MagicMallys" target="_blank"><i class="fab fa-facebook-f fa-2x" style="color: #1877F2;"></i></a>&emsp;
-          <a class="insta" href="https://instagram.com/magic_mallys" target="_blank"><i class="fab fa-instagram fa-2x" style="color: #E4405F;"></i></a>&emsp;
-          <i class="fas fa-map-marker-alt"></i> &emsp;&emsp; DE - Germany - Bordumstraße 1, 26382 Wilhelmshaven
+          <!-- <a class="teleg" href="https://instagram.com/magic_mallys" target="_blank"><i class="fab fa-instagram fa-2x" style="color: #E4405F;"></i></a>&emsp; -->
+
+          <a class="yout" href="https://t.me/MagicMallys"><i class="fab fa-telegram fa-2x"></i></a>&emsp;
+          
+          <i class="fas fa-map-marker-alt"></i> &emsp; DE - Germany - Bordumstraße 1, 26382 Wilhelmshaven
 
         </p>
       </div>
@@ -244,7 +247,14 @@
     &copy; © 2024 Magic Mallys. Alle Rechte vorbehalten. Entworfen und realisiert von Moustapha Sylla und seinem Team.<br>
   </footer>
 
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
 
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
 
 <script>
   // Scroll to contact form
