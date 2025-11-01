@@ -14,79 +14,85 @@
   <link rel="stylesheet" type="text/css" href="static/src/css/index.css">
 
   <style>
-    
-
-    @media (max-width: 768px) {
-       #de_logo {
-          margin-left: -10%;
-       }
+    #de_logo {
+      margin-left: -35%;
     }
+   /* General Navbar Styling */
+   .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #111;
+     color: white;
+     padding: 12px 20px;
+     position: sticky;
+     top: 0;
+     z-index: 999;
+   }
 
-    .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #111;
-  color: white;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
 
-.navbar img {
-  height: 60px;
-}
-
-#msteam { color: red; text-decoration: underline; }
-.logo {
-  font-size: 1.5rem;
+.navbar .logo {
+  font-size: 50px;
   font-weight: bold;
-  margin-left: 10px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-
-.menu-toggle {
+.navbar .menu-toggle {
   display: none;
   font-size: 28px;
+  cursor: pointer;
   background: none;
   border: none;
   color: white;
-  cursor: pointer;
 }
 
-/* Responsive styles */
+.navbar .nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  transition: background 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+/* 🔽 Mobile: max-width 768px */
 @media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background-color: #111;
-    flex-direction: column;
-    align-items: center;
-    display: none;
+  .navbar .menu-toggle {
+    display: block;
   }
 
-  .nav-links.active {
+   #de_logo {
+      margin-left: -13%;
+    }
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar .logo {
+     margin-left: 1%;
+  }
+  
+  .navbar .nav-links.active {
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
+  .navbar .nav-links a {
+    padding: 8px 0;
+    border-top: 1px solid #333;
   }
 }
   </style>
@@ -102,7 +108,6 @@
       if (window.innerWidth >= 410) {
         if (window.scrollY > 10) {
           navbar.classList.add("scrolled");
-          exit()
         } else {
           navbar.classList.remove("scrolled");
         }
@@ -119,17 +124,18 @@
 
 <body>
 
-  <header class="navbar">
-    <!-- <img src="static/src/media/imgs/mylog1.png" width="100" height="100" alt="Logo" /> -->
+  <div class="navbar">
+    <img src="static/src/media/imgs/mylog1.png" width="100" height="100" alt="Logo" />
     <div id="de_logo" class="logo">Magic Mallys</div>
-    <button class="menu-toggle" id="menuToggle">&#9776;</button>
-    <nav class="nav-links" id="navLinks">
-      <a class="a" href="#services">Dienstleistungen</a>
-      <a class="a1" href="#services1">Produkte</a>
-      <a class="a2" href="templates/de/uberuns.html">Über uns</a>
-      <a class="a3" href="#contact">Kontakt</a>
-    </nav>
-  </header><br><br>
+
+  <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  <nav class="nav-links" id="nav-links">
+    <a href="#home">Home</a>
+    <a href="#services">Dienstleistungen</a>
+    <a href="#products">Produkte</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+  </div><br><br>
 
   <section id="hero">
     <div class="hero-text">
@@ -148,7 +154,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="static/src/media/imgs/logos/IMG-20250806-WA0004.jpg" alt="Mockup">
+      <img src="static/src/media/imgs/20230927_094551.jpg" alt="Mockup">
       <!-- <img src="background1.png" alt="Mockup"> -->
     </div>
   </section>
@@ -302,6 +308,25 @@
 
   window.submitForm = submitForm; // Make accessible from HTML
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
 
+    menuToggle.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
+    });
+
+    // Optional: auto-close when clicking a link (mobile only)
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navLinks.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
