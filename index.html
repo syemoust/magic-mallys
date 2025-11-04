@@ -1,14 +1,237 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <title>Magic Mallys</title>
-  <script src="static/src/mjs/test.js"></script>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic-Mallys - Digitale Lösungen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="static/src/css/ms_de.css">
+
 </head>
+
 <body>
+
+    <header class="navbar">
+        <div id="de_logo" class="logo">Magic-Mallys</div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
+        <nav class="nav-links" id="navLinks">
+            <a href="#services">Dienstleistungen</a>
+            <a href="#products">Produkte</a>
+            <a href="#about">Über uns</a> 
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-text reveal">
+                <h1>Wenn Sie online nicht sichtbar sind, verpassen Sie Ihre Chancen.</h1>
+                <b class="mJob reveal delay-1">Websites, Apps, Datenautomatisierung & digitale Verkaufsplattformen</b>
+                <p class="reveal delay-2">
+                    Willkommen bei Magic-Mallys Ihrem Partner für individuelle <b>digitale Lösungen</b>. <br>
+                </p>
+                <p class="reveal delay-3">
+                    Ich bin Moustapha Sylla, Gründer von Magic-Mallys. Gemeinsam mit meinem Team verwandeln wir digitale Herausforderungen in intelligente Lösungen.
+                </p>
+                <div class="hero-buttons reveal delay-4">
+                    <button class="start-btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Projekt starten</button>
+                    <button class="shop-btn" onclick="window.location.href='#'">Shop</button>
+                </div>
+            </div>
+            <div class="hero-image reveal delay-4">
+                <img src="static/src/media/imgs/logos/mallys2.31.10.25.png">
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="reveal">Unsere Dienstleistungen</h2>
+            <div class="service-cards">
+                <div class="card reveal delay-1">
+                    <div class="card-icon">🌐</div>
+                    <h3>Webentwicklung</h3>
+                    <p>SEO-optimierte Websites für alle Unternehmensarten. Maßgeschneiderte E-Commerce-Lösungen inklusive.</p>
+                    <a href="#contact" class="cta green">Starten</a>
+                </div>
+                <div class="card reveal delay-2">
+                    <div class="card-icon">🖥️</div>
+                    <h3>Büroautomatisierung</h3>
+                    <p>Python, SQL, Web Scraping und Prozessoptimierung für Datenanalyse und effizientere Arbeitsabläufe.</p>
+                    <a href="#contact" class="cta blue">Starten</a>
+                </div>
+                <div class="card reveal delay-3">
+                    <div class="card-icon">🛒</div>
+                    <h3>Verkaufsplattform</h3>
+                    <p>Entwicklung von digitalen Verkaufsplattformen mit automatisierter Logistik und analytischen Dashboards.</p>
+                    <a href="#contact" class="cta purple">Starten</a>
+                </div>
+                <div class="card reveal delay-4">
+                    <div class="card-icon">📈</div>
+                    <h3>Dashboards mit Plotly</h3>
+                    <p>Interaktive, datengesteuerte Dashboards zur Visualisierung Ihrer Unternehmensdaten mit Pandas und Plotly Dash.</p>
+                    <a href="#contact" class="cta orange">Starten</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2 class="reveal">Unsere Produkte</h2>
+            <div class="service-cards">
+                <div class="card reveal delay-1">
+                    <div class="card-icon">📱</div>
+                    <h3>Digitale Gadgets</h3>
+                    <p>Intelligente Geräte für sichereres und angenehmeres Fahren – von Kameras bis zu Ladegeräten.</p>
+                    <a href="#" class="cta green">Zum Shop</a>
+                </div>
+                <div class="card reveal delay-2">
+                    <div class="card-icon">🏠</div>
+                    <h3>Smart-Geräte</h3>
+                    <p>Verbessern Sie Ihr Leben mit intelligenten Assistenten und Sicherheitstechnologie für Ihr Zuhause.</p>
+                    <a href="#" class="cta blue">Zum Shop</a>
+                </div>
+                <div class="card reveal delay-3">
+                    <div class="card-icon">💻</div>
+                    <h3>Hardware Verkauf</h3>
+                    <p>Top-Modelle mit neuester Technologie zu wettbewerbsfähigen Preisen und fachkundiger Beratung.</p>
+                    <a href="#" class="cta purple">Zum Shop</a>
+                </div>
+                <div class="card reveal delay-4">
+                    <div class="card-icon">🚢</div>
+                    <h3>Import-/Exportsoftware</h3>
+                    <p>Spezialisierte Software für Logistik, Zollcodes und detaillierte Produktverfolgung weltweit.</p>
+                    <a href="#" class="cta orange">Zum Shop</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="video-wrapper">
+        <h2 class="reveal">Einblick in unsere Arbeit</h2>
+        <div class="container">
+               <video id="aboutVideo" width="100%" controls muted autoplay preload="none">
+               <source src="static/src/media/vids/data_visual_capc1.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-form reveal">
+                    <h2>Kontaktiere uns</h2>
+                    <p>Starte dein Projekt mit Magic Mallys.</p>
+                    <form onsubmit="submitForm(event)">
+                        <label>Vollständiger Name <input type="text" name="full_name" required></label>
+                        <label>Email <input type="email" name="email" required></label>
+                        <label>Nachricht <textarea name="message" rows="4" required></textarea></label>
+                        <button type="submit">Senden</button>
+                    </form>
+                </div>
+
+                <div class="contact-info reveal delay-1">
+                    <h3 class="k_info">Kontaktinformationen</h3><br>
+                    <div class="social-icons">
+                        <a class="whspp" href="https://wa.me/4915215046143" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp" style="color: #25D366;"></i></a>
+                        <a class="tiktok" href="https://www.tiktok.com/@magic_mallys" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok" style="color: #000;"></i></a>
+                        <a class="fcbook" href="https://facebook.com/MagicMallys" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f" style="color: #1877F2;"></i></a>
+                        <a class="teleg" href="https://t.me/MagicMallys" target="_blank" aria-label="Telegram"><i class="fab fa-telegram" style="color: #0088cc;"></i></a>
+                    </div>
+                    <div class="address">
+                        <i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--primary-color);"></i> DE - Germany - Bordumstraße 1, 26382 Wilhelmshaven
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2024 Magic-Mallys. Alle Rechte vorbehalten. Entworfen und realisiert von <b>Moustapha Sylla</b> und seinem Team.
+        </div>
+    </footer>
+
+    <script>
+        // Form Submission Handler (Client-side only for this single file)
+        function submitForm(event) {
+            event.preventDefault();
+
+            // In a real application, you would use fetch() or XMLHttpRequest here to send data to a server.
+            console.log("Form submitted. Data should be sent to server.");
+
+            alert('Danke! Wir haben deine Nachricht erhalten. Wir melden uns in Kürze bei dir.');
+
+            event.target.reset(); // Reset the form fields
+        }
+
+        // 1. Scroll-Based Header Class Toggle
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.querySelector(".navbar");
+
+            function handleScroll() {
+                // Add scrolled class when scrolled past 10px
+                if (window.scrollY > 10) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            }
+
+            window.addEventListener("scroll", handleScroll);
+            handleScroll(); // Run on page load
+        });
+
+        // 2. Mobile Menu Toggle
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+            
+            // Close menu when a link is clicked (for smoother mobile navigation)
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('show')) {
+                        navLinks.classList.remove('show');
+                    }
+                });
+            });
+        });
+
+
+        // 3. Scroll Reveal Animation Logic (Professional Touch)
+        document.addEventListener("DOMContentLoaded", function () {
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const observerOptions = {
+                root: null, // relative to the viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% of the element must be visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optionally stop observing once active
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>
